@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engativá Inspira - Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body>
+
+    <nav class="sidebar mobile-only">
+        <div class="background-blur">
+            <div class="brand-section">
+                <div class="logo-container">
+                    <img src="./img/logo.png" alt="Logo" class="main-logo">
+                </div>
+                <span class="brand-name">Marketplace</span>
+            </div>
+
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="buscador" placeholder="¿Qué quieres comprar?">
+            </div>
+
+            
+        
+    
+    <div class="mobile-only" style="margin-top: 0; padding-top: 5px;">
+                <h3 style="font-size: 16px; padding-left: 10px; margin-bottom: 10px; color: #ffffff;">Localidades Bogotá</h3>
+                <div id="lista-localidades">
+                    <div class="nav-option active" onclick="filtrarLocalidad('todas', this)">
+                        <i class="fas fa-globe"></i> Explorar todo
+                    </div>
+                    
+                    <div class="nav-item-wrapper">
+                        <div class="nav-option">
+                            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 5px;">
+                                <span onclick="filtrarLocalidad('Engativá', this.closest('.nav-option'))" style="flex-grow: 1; cursor: pointer;"><i class="fas fa-map-marker-alt"></i> Engativá</span>
+                                <i class="fas fa-chevron-down" onclick="toggleSubmenuExclusive('submenu-engativa'); event.stopPropagation();" style="font-size: 12px; padding: 5px; cursor: pointer;"></i>
+                            </div>
+                        </div>
+                        
+                        <div id="submenu-engativa" class="submenu">
+                            
+                            <!-- Sector 1 -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('sec1')">1. Sector Engativá Pueblo <i class="fas fa-chevron-down"></i></button>
+                                <div id="sec1" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('sec1')">
+                                        <i class="fas fa-arrow-left"></i> 1. Sector Engativá Pueblo
+                                    </div>
+                                    <div class="sub-item">Engativá Centro</div>
+                                    <div class="sub-item">Villa Gladys</div>
+                                    <div class="sub-item">Marandú</div>
+                                    <div class="sub-item">Villas del Dorado</div>
+                                    <div class="sub-item">Lujan</div>
+                                    <div class="sub-item">Real de Minas</div>
+                                    <div class="sub-item">La Faena</div>
+                                </div>
+                            </div>
+
+                            <!-- Sector 2 -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('sec2')">2. Sector Álamos - Garcés Navas <i class="fas fa-chevron-down"></i></button>
+                                <div id="sec2" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('sec2')">
+                                        <i class="fas fa-arrow-left"></i> 2. Sector Álamos - Garcés Navas
+                                    </div>
+                                    <div class="sub-item">Álamos Norte</div>
+                                    <div class="sub-item">Garcés Navas</div>
+                                    <div class="sub-item">Villas de Granada</div>
+                                    <div class="sub-item">Portal de la Sabana</div>
+                                    <div class="sub-item">Bosques de Mariana</div>
+                                    <div class="sub-item">El Cortijo</div>
+                                    <div class="sub-item">Molinos del Viento</div>
+                                </div>
+                            </div>
+
+                            <!-- Sector 3 -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('sec3')">3. Sector Tabora - Santa Helenita <i class="fas fa-chevron-down"></i></button>
+                                <div id="sec3" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('sec3')">
+                                        <i class="fas fa-arrow-left"></i> 3. Sector Tabora - Santa Helenita
+                                    </div>
+                                    <div class="sub-item">Tabora</div>
+                                    <div class="sub-item">Santa Helenita</div>
+                                    <div class="sub-item">La Granja</div>
+                                    <div class="sub-item">Serena</div>
+                                    <div class="sub-item">Florida Blanca</div>
+                                    <div class="sub-item">Lourdes</div>
+                                    <div class="sub-item">Curubal</div>
+                                </div>
+                            </div>
+
+                            <!-- Sector 4 -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('sec4')">4. Sector Minuto de Dios <i class="fas fa-chevron-down"></i></button>
+                                <div id="sec4" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('sec4')">
+                                        <i class="fas fa-arrow-left"></i> 4. Sector Minuto de Dios
+                                    </div>
+                                    <div class="sub-item">Minuto de Dios</div>
+                                    <div class="sub-item">Boyacá Real</div>
+                                    <div class="sub-item">Pontevedra (sector occidental)</div>
+                                    <div class="sub-item">Santa María del Lago</div>
+                                    <div class="sub-item">Bonanza</div>
+                                    <div class="sub-item">Palermo</div>
+                                    <div class="sub-item">Tibaqué</div>
+                                </div>
+                            </div>
+
+                            <!-- Sector 5 -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('sec5')">5. Sector Las Ferias <i class="fas fa-chevron-down"></i></button>
+                                <div id="sec5" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('sec5')">
+                                        <i class="fas fa-arrow-left"></i> 5. Sector Las Ferias
+                                    </div>
+                                    <div class="sub-item">Las Ferias</div>
+                                    <div class="sub-item">Estrada</div>
+                                    <div class="sub-item">Bellavista Occidental</div>
+                                    <div class="sub-item">Bosque Popular</div>
+                                    <div class="sub-item">Jardín Botánico (sector norte)</div>
+                                    <div class="sub-item">La Cabaña</div>
+                                </div>
+                            </div>
+
+                            <!-- Sector 6 -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('sec6')">6. Sector Quirigua - Bachué <i class="fas fa-chevron-down"></i></button>
+                                <div id="sec6" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('sec6')">
+                                        <i class="fas fa-arrow-left"></i> 6. Sector Quirigua - Bachué
+                                    </div>
+                                    <div class="sub-item">Quirigua</div>
+                                    <div class="sub-item">Bachué</div>
+                                    <div class="sub-item">Primavera Norte</div>
+                                    <div class="sub-item">La Española</div>
+                                    <div class="sub-item">Almería</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- LOCALIDAD SUBA (Móvil)
+                    <div class="nav-item-wrapper">
+                        <div class="nav-option">
+                            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 5px;">
+                                <span onclick="filtrarLocalidad('Suba', this.closest('.nav-option'))" style="flex-grow: 1; cursor: pointer;"><i class="fas fa-map-marker-alt"></i> Suba</span>
+                                <i class="fas fa-chevron-down" onclick="toggleSubmenuExclusive('submenu-suba'); event.stopPropagation();" style="font-size: 12px; padding: 5px; cursor: pointer;"></i>
+                            </div>
+                        </div>
+                        
+                        <div id="submenu-suba" class="submenu">
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('sec-suba1')">1. Sector Suba Centro <i class="fas fa-chevron-down"></i></button>
+                                <div id="sec-suba1" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('sec-suba1')"><i class="fas fa-arrow-left"></i> 1. Sector Suba Centro</div>
+                                    <div class="sub-item">Plaza Imperial</div>
+                                    <div class="sub-item">Centro Suba</div>
+                                    <div class="sub-item">Rincón</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+                    <!-- CATEGORIAS (Móvil) -->
+                    <div class="nav-item-wrapper">
+                        <div class="nav-option">
+                            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 5px;">
+                                <span class="menu-title" onclick="toggleSubmenuExclusive('submenu-categorias')" style="flex-grow: 1; cursor: pointer;"><i class="fas fa-list"></i> Categorias</span>
+                                <i class="fas fa-chevron-down" onclick="toggleSubmenuExclusive('submenu-categorias'); event.stopPropagation();" style="font-size: 12px; padding: 5px; cursor: pointer;"></i>
+                            </div>
+                        </div>
+                        
+                        <div id="submenu-categorias" class="submenu">
+                            <!-- Accesorios -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-accesorios-mobile')">Accesorios joyería y bisutería <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-accesorios-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-accesorios-mobile')"><i class="fas fa-arrow-left"></i> Accesorios</div>
+                                    <div class="sub-item">Accesorios</div>
+                                    <div class="sub-item">Bisutería</div>
+                                    <div class="sub-item">Joyería</div>
+                                </div>
+                            </div>
+                            <!-- Artesanías -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-artesanias-mobile')">Artesanías y Tradición <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-artesanias-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-artesanias-mobile')"><i class="fas fa-arrow-left"></i> Artesanías</div>
+                                    <div class="sub-item">Hogar y decoración</div>
+                                    <div class="sub-item">Joyería Artesanal</div>
+                                    <div class="sub-item">Moda Artesanal</div>
+                                </div>
+                            </div>
+                            <!-- Gastronomía -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-gastronomia-mobile')">Gastronomía <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-gastronomia-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-gastronomia-mobile')"><i class="fas fa-arrow-left"></i> Gastronomía</div>
+                                    <div class="sub-item">Anchetas y desayunos sorpresa</div>
+                                    <div class="sub-item">Bebidas</div>
+                                    <div class="sub-item">Despensa y Confitería</div>
+                                    <div class="sub-item">Licores</div>
+                                    <div class="sub-item">Panadería y Pastelería</div>
+                                    <div class="sub-item">Refrigerados y Congelados</div>
+                                    <div class="sub-item">Sabor a Campo</div>
+                                    <div class="sub-item">Saludables</div>
+                                    <div class="sub-item">Snacks</div>
+                                </div>
+                            </div>
+                            <!-- Hogar -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-hogar-mobile')">Hogar <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-hogar-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-hogar-mobile')"><i class="fas fa-arrow-left"></i> Hogar</div>
+                                    <div class="sub-item">Baño</div>
+                                    <div class="sub-item">Cocina</div>
+                                    <div class="sub-item">Comedores</div>
+                                    <div class="sub-item">Cuidado del hogar</div>
+                                    <div class="sub-item">Decoraciones</div>
+                                    <div class="sub-item">Flores</div>
+                                    <div class="sub-item">Habitación</div>
+                                    <div class="sub-item">Jardines y exteriores</div>
+                                    <div class="sub-item">Muebles de Exterior</div>
+                                    <div class="sub-item">Navidad</div>
+                                    <div class="sub-item">Oficina y estudio</div>
+                                    <div class="sub-item">Otros productos de Hogar</div>
+                                    <div class="sub-item">Salas y Sofas</div>
+                                    <div class="sub-item">Servicios Hogar</div>
+                                </div>
+                            </div>
+                            <!-- Juguetería -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-jugueteria-mobile')">Juguetería <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-jugueteria-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-jugueteria-mobile')"><i class="fas fa-arrow-left"></i> Juguetería</div>
+                                    <div class="sub-item">Carros</div>
+                                    <div class="sub-item">Disfraces</div>
+                                    <div class="sub-item">Juegos de mesa</div>
+                                    <div class="sub-item">Juguetes de Madera</div>
+                                    <div class="sub-item">Montables</div>
+                                    <div class="sub-item">Muñecas y muñecos</div>
+                                    <div class="sub-item">Peluches</div>
+                                    <div class="sub-item">Radio Controlados</div>
+                                    <div class="sub-item">Rompecabezas</div>
+                                </div>
+                            </div>
+                            <!-- Mascotas -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-mascotas-mobile')">Mascotas <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-mascotas-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-mascotas-mobile')"><i class="fas fa-arrow-left"></i> Mascotas</div>
+                                    <div class="sub-item">Gatos</div>
+                                    <div class="sub-item">Otras mascotas</div>
+                                    <div class="sub-item">Perros</div>
+                                </div>
+                            </div>
+                            <!-- Moda Femenina -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-moda-mujer-mobile')">Moda Femenina <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-moda-mujer-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-moda-mujer-mobile')"><i class="fas fa-arrow-left"></i> Moda Femenina</div>
+                                    <div class="sub-item">Maternidad</div>
+                                    <div class="sub-item">Novias</div>
+                                    <div class="sub-item">Ropa</div>
+                                    <div class="sub-item">Ropa deportiva para mujer</div>
+                                    <div class="sub-item">Ropa Interior Mujer</div>
+                                    <div class="sub-item">Zapatos para Mujer</div>
+                                </div>
+                            </div>
+                            <!-- Moda Infantil -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-moda-infantil-mobile')">Moda Infantil <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-moda-infantil-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-moda-infantil-mobile')"><i class="fas fa-arrow-left"></i> Moda Infantil</div>
+                                    <div class="sub-item">Bebés</div>
+                                    <div class="sub-item">Morrales Niños</div>
+                                    <div class="sub-item">Niñas</div>
+                                    <div class="sub-item">Niños</div>
+                                </div>
+                            </div>
+                            <!-- Moda Masculina -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-moda-hombre-mobile')">Moda Masculina <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-moda-hombre-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-moda-hombre-mobile')"><i class="fas fa-arrow-left"></i> Moda Masculina</div>
+                                    <div class="sub-item">Bermudas y Trajes de Baño</div>
+                                    <div class="sub-item">Deportiva Hombre</div>
+                                    <div class="sub-item">Ropa Hombre</div>
+                                    <div class="sub-item">Ropa Interior y Pijamas</div>
+                                    <div class="sub-item">Zapatos Hombre</div>
+                                </div>
+                            </div>
+                            <!-- Otros -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-otros-mobile')">Otros <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-otros-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-otros-mobile')"><i class="fas fa-arrow-left"></i> Otros</div>
+                                    <div class="sub-item">Adultos</div>
+                                    <div class="sub-item">Descuentos</div>
+                                    <div class="sub-item">Ferreteria</div>
+                                </div>
+                            </div>
+                            <!-- Papelería -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-papeleria-mobile')">Papelería y Música <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-papeleria-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-papeleria-mobile')"><i class="fas fa-arrow-left"></i> Papelería</div>
+                                    <div class="sub-item">Empaques</div>
+                                    <div class="sub-item">Instrumentos Musicales</div>
+                                    <div class="sub-item">Libros</div>
+                                    <div class="sub-item">Manualidades y artes</div>
+                                    <div class="sub-item">Oficina</div>
+                                    <div class="sub-item">Otros</div>
+                                    <div class="sub-item">Útiles Escolares</div>
+                                </div>
+                            </div>
+                            <!-- Recreación -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-recreacion-mobile')">Recreación y deporte <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-recreacion-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-recreacion-mobile')"><i class="fas fa-arrow-left"></i> Recreación</div>
+                                    <div class="sub-item">Accesorios deportivos</div>
+                                    <div class="sub-item">Bicicletas</div>
+                                    <div class="sub-item">Campin</div>
+                                    <div class="sub-item">Elementos Deportivos</div>
+                                    <div class="sub-item">Enseñanza y formación deportiva</div>
+                                    <div class="sub-item">Gimnasios y centros de entrenamiento</div>
+                                    <div class="sub-item">Monoruedas</div>
+                                </div>
+                            </div>
+                            <!-- Salud -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-salud-mobile')">Salud y belleza <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-salud-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-salud-mobile')"><i class="fas fa-arrow-left"></i> Salud</div>
+                                    <div class="sub-item">Cuidado capilar</div>
+                                    <div class="sub-item">Cuidado corporal</div>
+                                    <div class="sub-item">Cuidado facial</div>
+                                    <div class="sub-item">Elementos de Bioseguridad</div>
+                                    <div class="sub-item">Equipos médicos</div>
+                                    <div class="sub-item">Maquillaje</div>
+                                    <div class="sub-item">Suplementos Alimentarios</div>
+                                    <div class="sub-item">Uñas</div>
+                                </div>
+                            </div>
+                            <!-- Servicios -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-servicios-mobile')">Servicios <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-servicios-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-servicios-mobile')"><i class="fas fa-arrow-left"></i> Servicios</div>
+                                    <div class="sub-item">Dotaciones</div>
+                                    <div class="sub-item">Formación</div>
+                                    <div class="sub-item">Invitaciones</div>
+                                </div>
+                            </div>
+                            <!-- Tecnología -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-tecnologia-mobile')">Tecnología <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-tecnologia-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-tecnologia-mobile')"><i class="fas fa-arrow-left"></i> Tecnología</div>
+                                    <div class="sub-item">Accesorios computación</div>
+                                    <div class="sub-item">Accesorios para celulares</div>
+                                    <div class="sub-item">Computadores y Monitores</div>
+                                    <div class="sub-item">Otros Accesorios</div>
+                                    <div class="sub-item">Seguridad</div>
+                                    <div class="sub-item">Tablets</div>
+                                    <div class="sub-item">Tecnología hogar</div>
+                                    <div class="sub-item">Video Juegos</div>
+                                </div>
+                            </div>
+                            <!-- Viajes -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSector('cat-viajes-mobile')">Viajes y turismo <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-viajes-mobile" class="sector-content">
+                                    <div class="sector-header-mobile" onclick="toggleSector('cat-viajes-mobile')"><i class="fas fa-arrow-left"></i> Viajes</div>
+                                    <div class="sub-item">Recreación y Cultura</div>
+                                    <div class="sub-item">Viajes turísticos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+</nav>
+    <main class="main-content">
+        
+        <!-- HEADER ESCRITORIO (Nuevo Sidebar integrado) -->
+        <div class="desktop-header desktop-only">
+            <div class="brand-section" style="flex-direction: row; margin-bottom: 0;">
+                <div class="logo-container-web" style="width: auto;  padding: 5px;">
+                    <img src="./img/logo.png" alt="Logo" class="main-logo-web">
+                </div>
+                <span class="brand-name" style="color: var(--txt-p); font-size: 24px;">Marketplace</span>
+            </div>
+
+            <div class="search-box" style="margin: 0; flex: 1; max-width: 600px;">
+                <i class="fas fa-search"></i>
+                <input type="text" id="buscador-web" placeholder="¿Qué quieres comprar?">
+            </div>
+        </div>
+
+        <h2 id="section-title">Sugerencias de hoy</h2>
+
+        <!-- FILTROS VERSIÓN WEB (Solo Escritorio) -->
+        <div class="desktop-only" style="margin-bottom: 20px;">
+            <h3 style="font-size: 16px; margin-bottom: 10px; color: var(--txt-p);">Localidades Bogotá</h3>
+            <div id="lista-localidades-web">
+                <div class="nav-option active" onclick="filtrarLocalidad('todas', this)">
+                    <i class="fas fa-globe"></i> Explorar todo
+                </div>
+                
+                <div class="nav-item-wrapper">
+                    <div class="nav-option">
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 5px;">
+                            <span onclick="filtrarLocalidad('Engativá', this.closest('.nav-option'))" style="flex-grow: 1; cursor: pointer;"><i class="fas fa-map-marker-alt"></i> Engativá</span>
+                            <i class="fas fa-chevron-down" onclick="toggleSubmenuExclusive('submenu-engativa-web'); event.stopPropagation();" style="font-size: 12px; padding: 5px; cursor: pointer;"></i>
+                        </div>
+                    </div>
+                    
+                    <div id="submenu-engativa-web" class="submenu">
+                        
+                        <!-- Sector 1 -->
+                        <div class="sector-wrapper">
+                            <button class="sector-btn" onclick="toggleSectorWeb('sec1-web')" onmouseover="openSectorWeb('sec1-web')">1. Sector Engativá Pueblo <i class="fas fa-chevron-down"></i></button>
+                            <div id="sec1-web" class="sector-content">
+                                <div class="sub-item">Engativá Centro</div>
+                                <div class="sub-item">Villa Gladys</div>
+                                <div class="sub-item">Marandú</div>
+                                <div class="sub-item">Villas del Dorado</div>
+                                <div class="sub-item">Lujan</div>
+                                <div class="sub-item">Real de Minas</div>
+                                <div class="sub-item">La Faena</div>
+                            </div>
+                        </div>
+
+                        <!-- Sector 2 -->
+                        <div class="sector-wrapper">
+                            <button class="sector-btn" onclick="toggleSectorWeb('sec2-web')" onmouseover="openSectorWeb('sec2-web')">2. Sector Álamos - Garcés Navas <i class="fas fa-chevron-down"></i></button>
+                            <div id="sec2-web" class="sector-content">
+                                <div class="sub-item">Álamos Norte</div>
+                                <div class="sub-item">Garcés Navas</div>
+                                <div class="sub-item">Villas de Granada</div>
+                                <div class="sub-item">Portal de la Sabana</div>
+                                <div class="sub-item">Bosques de Mariana</div>
+                                <div class="sub-item">El Cortijo</div>
+                                <div class="sub-item">Molinos del Viento</div>
+                            </div>
+                        </div>
+
+                        <!-- Sector 3 -->
+                        <div class="sector-wrapper">
+                            <button class="sector-btn" onclick="toggleSectorWeb('sec3-web')" onmouseover="openSectorWeb('sec3-web')">3. Sector Tabora - Santa Helenita <i class="fas fa-chevron-down"></i></button>
+                            <div id="sec3-web" class="sector-content">
+                                <div class="sub-item">Tabora</div>
+                                <div class="sub-item">Santa Helenita</div>
+                                <div class="sub-item">La Granja</div>
+                                <div class="sub-item">Serena</div>
+                                <div class="sub-item">Florida Blanca</div>
+                                <div class="sub-item">Lourdes</div>
+                                <div class="sub-item">Curubal</div>
+                            </div>
+                        </div>
+
+                        <!-- Sector 4 -->
+                        <div class="sector-wrapper">
+                            <button class="sector-btn" onclick="toggleSectorWeb('sec4-web')" onmouseover="openSectorWeb('sec4-web')">4. Sector Minuto de Dios <i class="fas fa-chevron-down"></i></button>
+                            <div id="sec4-web" class="sector-content">
+                                <div class="sub-item">Minuto de Dios</div>
+                                <div class="sub-item">Boyacá Real</div>
+                                <div class="sub-item">Pontevedra (sector occidental)</div>
+                                <div class="sub-item">Santa María del Lago</div>
+                                <div class="sub-item">Bonanza</div>
+                                <div class="sub-item">Palermo</div>
+                                <div class="sub-item">Tibaqué</div>
+                            </div>
+                        </div>
+
+                        <!-- Sector 5 -->
+                        <div class="sector-wrapper">
+                            <button class="sector-btn" onclick="toggleSectorWeb('sec5-web')" onmouseover="openSectorWeb('sec5-web')">5. Sector Las Ferias <i class="fas fa-chevron-down"></i></button>
+                            <div id="sec5-web" class="sector-content">
+                                <div class="sub-item">Las Ferias</div>
+                                <div class="sub-item">Estrada</div>
+                                <div class="sub-item">Bellavista Occidental</div>
+                                <div class="sub-item">Bosque Popular</div>
+                                <div class="sub-item">Jardín Botánico (sector norte)</div>
+                                <div class="sub-item">La Cabaña</div>
+                            </div>
+                        </div>
+
+                        <!-- Sector 6 -->
+                        <div class="sector-wrapper">
+                            <button class="sector-btn" onclick="toggleSectorWeb('sec6-web')" onmouseover="openSectorWeb('sec6-web')">6. Sector Quirigua - Bachué <i class="fas fa-chevron-down"></i></button>
+                            <div id="sec6-web" class="sector-content">
+                                <div class="sub-item">Quirigua</div>
+                                <div class="sub-item">Bachué</div>
+                                <div class="sub-item">Primavera Norte</div>
+                                <div class="sub-item">La Española</div>
+                                <div class="sub-item">Almería</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    <!-- LOCALIDAD SUBA (Escritorio) -->
+                    <div class="nav-item-wrapper">
+                        <div class="nav-option">
+                            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 5px;">
+                                <span onclick="filtrarLocalidad('Suba', this.closest('.nav-option'))" style="flex-grow: 1; cursor: pointer;"><i class="fas fa-map-marker-alt"></i> Suba</span>
+                                <i class="fas fa-chevron-down" onclick="toggleSubmenuExclusive('submenu-suba-web'); event.stopPropagation();" style="font-size: 12px; padding: 5px; cursor: pointer;"></i>
+                            </div>
+                        </div>
+                        
+                        <div id="submenu-suba-web" class="submenu">
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('sec-suba1-web')" onmouseover="openSectorWeb('sec-suba1-web')">1. Sector Suba Centro <i class="fas fa-chevron-down"></i></button>
+                                <div id="sec-suba1-web" class="sector-content">
+                                    <div class="sub-item">Plaza Imperial</div>
+                                    <div class="sub-item">Centro Suba</div>
+                                    <div class="sub-item">Rincón</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- CATEGORIAS (Escritorio) -->
+                    <div class="nav-item-wrapper">
+                        <div class="nav-option">
+                            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 5px;">
+                                <span class="menu-title" onclick="toggleSubmenuExclusive('submenu-categorias-web')" style="flex-grow: 1; cursor: pointer;"><i class="fas fa-list"></i> Categorias</span>
+                                <i class="fas fa-chevron-down" onclick="toggleSubmenuExclusive('submenu-categorias-web'); event.stopPropagation();" style="font-size: 12px; padding: 5px; cursor: pointer;"></i>
+                            </div>
+                        </div>
+                        
+                        <div id="submenu-categorias-web" class="submenu">
+                            <!-- Accesorios -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-accesorios-web')" onmouseover="openSectorWeb('cat-accesorios-web')">Accesorios joyería y bisutería <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-accesorios-web" class="sector-content">
+                                    <div class="sub-item">Accesorios</div>
+                                    <div class="sub-item">Bisutería</div>
+                                    <div class="sub-item">Joyería</div>
+                                </div>
+                            </div>
+                            <!-- Artesanías -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-artesanias-web')" onmouseover="openSectorWeb('cat-artesanias-web')">Artesanías y Tradición <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-artesanias-web" class="sector-content">
+                                    <div class="sub-item">Hogar y decoración</div>
+                                    <div class="sub-item">Joyería Artesanal</div>
+                                    <div class="sub-item">Moda Artesanal</div>
+                                </div>
+                            </div>
+                            <!-- Gastronomía -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-gastronomia-web')" onmouseover="openSectorWeb('cat-gastronomia-web')">Gastronomía <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-gastronomia-web" class="sector-content">
+                                    <div class="sub-item">Anchetas y desayunos sorpresa</div>
+                                    <div class="sub-item">Bebidas</div>
+                                    <div class="sub-item">Despensa y Confitería</div>
+                                    <div class="sub-item">Licores</div>
+                                    <div class="sub-item">Panadería y Pastelería</div>
+                                    <div class="sub-item">Refrigerados y Congelados</div>
+                                    <div class="sub-item">Sabor a Campo</div>
+                                    <div class="sub-item">Saludables</div>
+                                    <div class="sub-item">Snacks</div>
+                                </div>
+                            </div>
+                            <!-- Hogar -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-hogar-web')" onmouseover="openSectorWeb('cat-hogar-web')">Hogar <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-hogar-web" class="sector-content">
+                                    <div class="sub-item">Baño</div>
+                                    <div class="sub-item">Cocina</div>
+                                    <div class="sub-item">Comedores</div>
+                                    <div class="sub-item">Cuidado del hogar</div>
+                                    <div class="sub-item">Decoraciones</div>
+                                    <div class="sub-item">Flores</div>
+                                    <div class="sub-item">Habitación</div>
+                                    <div class="sub-item">Jardines y exteriores</div>
+                                    <div class="sub-item">Muebles de Exterior</div>
+                                    <div class="sub-item">Navidad</div>
+                                    <div class="sub-item">Oficina y estudio</div>
+                                    <div class="sub-item">Otros productos de Hogar</div>
+                                    <div class="sub-item">Salas y Sofas</div>
+                                    <div class="sub-item">Servicios Hogar</div>
+                                </div>
+                            </div>
+                            <!-- Juguetería -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-jugueteria-web')" onmouseover="openSectorWeb('cat-jugueteria-web')">Juguetería <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-jugueteria-web" class="sector-content">
+                                    <div class="sub-item">Carros</div>
+                                    <div class="sub-item">Disfraces</div>
+                                    <div class="sub-item">Juegos de mesa</div>
+                                    <div class="sub-item">Juguetes de Madera</div>
+                                    <div class="sub-item">Montables</div>
+                                    <div class="sub-item">Muñecas y muñecos</div>
+                                    <div class="sub-item">Peluches</div>
+                                    <div class="sub-item">Radio Controlados</div>
+                                    <div class="sub-item">Rompecabezas</div>
+                                </div>
+                            </div>
+                            <!-- Mascotas -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-mascotas-web')" onmouseover="openSectorWeb('cat-mascotas-web')">Mascotas <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-mascotas-web" class="sector-content">
+                                    <div class="sub-item">Gatos</div>
+                                    <div class="sub-item">Otras mascotas</div>
+                                    <div class="sub-item">Perros</div>
+                                </div>
+                            </div>
+                            <!-- Moda Femenina -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-moda-mujer-web')" onmouseover="openSectorWeb('cat-moda-mujer-web')">Moda Femenina <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-moda-mujer-web" class="sector-content">
+                                    <div class="sub-item">Maternidad</div>
+                                    <div class="sub-item">Novias</div>
+                                    <div class="sub-item">Ropa</div>
+                                    <div class="sub-item">Ropa deportiva para mujer</div>
+                                    <div class="sub-item">Ropa Interior Mujer</div>
+                                    <div class="sub-item">Zapatos para Mujer</div>
+                                </div>
+                            </div>
+                            <!-- Moda Infantil -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-moda-infantil-web')" onmouseover="openSectorWeb('cat-moda-infantil-web')">Moda Infantil <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-moda-infantil-web" class="sector-content">
+                                    <div class="sub-item">Bebés</div>
+                                    <div class="sub-item">Morrales Niños</div>
+                                    <div class="sub-item">Niñas</div>
+                                    <div class="sub-item">Niños</div>
+                                </div>
+                            </div>
+                            <!-- Moda Masculina -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-moda-hombre-web')" onmouseover="openSectorWeb('cat-moda-hombre-web')">Moda Masculina <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-moda-hombre-web" class="sector-content">
+                                    <div class="sub-item">Bermudas y Trajes de Baño</div>
+                                    <div class="sub-item">Deportiva Hombre</div>
+                                    <div class="sub-item">Ropa Hombre</div>
+                                    <div class="sub-item">Ropa Interior y Pijamas</div>
+                                    <div class="sub-item">Zapatos Hombre</div>
+                                </div>
+                            </div>
+                            <!-- Otros -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-otros-web')" onmouseover="openSectorWeb('cat-otros-web')">Otros <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-otros-web" class="sector-content">
+                                    <div class="sub-item">Adultos</div>
+                                    <div class="sub-item">Descuentos</div>
+                                    <div class="sub-item">Ferreteria</div>
+                                </div>
+                            </div>
+                            <!-- Papelería -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-papeleria-web')" onmouseover="openSectorWeb('cat-papeleria-web')">Papelería y Música <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-papeleria-web" class="sector-content">
+                                    <div class="sub-item">Empaques</div>
+                                    <div class="sub-item">Instrumentos Musicales</div>
+                                    <div class="sub-item">Libros</div>
+                                    <div class="sub-item">Manualidades y artes</div>
+                                    <div class="sub-item">Oficina</div>
+                                    <div class="sub-item">Otros</div>
+                                    <div class="sub-item">Útiles Escolares</div>
+                                </div>
+                            </div>
+                            <!-- Recreación -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-recreacion-web')" onmouseover="openSectorWeb('cat-recreacion-web')">Recreación y deporte <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-recreacion-web" class="sector-content">
+                                    <div class="sub-item">Accesorios deportivos</div>
+                                    <div class="sub-item">Bicicletas</div>
+                                    <div class="sub-item">Campin</div>
+                                    <div class="sub-item">Elementos Deportivos</div>
+                                    <div class="sub-item">Enseñanza y formación deportiva</div>
+                                    <div class="sub-item">Gimnasios y centros de entrenamiento</div>
+                                    <div class="sub-item">Monoruedas</div>
+                                </div>
+                            </div>
+                            <!-- Salud -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-salud-web')" onmouseover="openSectorWeb('cat-salud-web')">Salud y belleza <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-salud-web" class="sector-content">
+                                    <div class="sub-item">Cuidado capilar</div>
+                                    <div class="sub-item">Cuidado corporal</div>
+                                    <div class="sub-item">Cuidado facial</div>
+                                    <div class="sub-item">Elementos de Bioseguridad</div>
+                                    <div class="sub-item">Equipos médicos</div>
+                                    <div class="sub-item">Maquillaje</div>
+                                    <div class="sub-item">Suplementos Alimentarios</div>
+                                    <div class="sub-item">Uñas</div>
+                                </div>
+                            </div>
+                            <!-- Servicios -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-servicios-web')" onmouseover="openSectorWeb('cat-servicios-web')">Servicios <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-servicios-web" class="sector-content">
+                                    <div class="sub-item">Dotaciones</div>
+                                    <div class="sub-item">Formación</div>
+                                    <div class="sub-item">Invitaciones</div>
+                                </div>
+                            </div>
+                            <!-- Tecnología -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-tecnologia-web')" onmouseover="openSectorWeb('cat-tecnologia-web')">Tecnología <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-tecnologia-web" class="sector-content">
+                                    <div class="sub-item">Accesorios computación</div>
+                                    <div class="sub-item">Accesorios para celulares</div>
+                                    <div class="sub-item">Computadores y Monitores</div>
+                                    <div class="sub-item">Otros Accesorios</div>
+                                    <div class="sub-item">Seguridad</div>
+                                    <div class="sub-item">Tablets</div>
+                                    <div class="sub-item">Tecnología hogar</div>
+                                    <div class="sub-item">Video Juegos</div>
+                                </div>
+                            </div>
+                            <!-- Viajes -->
+                            <div class="sector-wrapper">
+                                <button class="sector-btn" onclick="toggleSectorWeb('cat-viajes-web')" onmouseover="openSectorWeb('cat-viajes-web')">Viajes y turismo <i class="fas fa-chevron-down"></i></button>
+                                <div id="cat-viajes-web" class="sector-content">
+                                    <div class="sub-item">Recreación y Cultura</div>
+                                    <div class="sub-item">Viajes turísticos</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div id="skeleton-container" class="product-grid">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+        
+
+        <div class="product-grid" id="main-grid" style="display: none;">
+            </div>
+
+        <div id="not-found" class="error-msg">
+            <i class="fas fa-search-minus"></i>
+            <p>Producto no Existente</p>
+        </div>
+
+        <footer>
+            <p>&copy; Alcaldía de Engativá - Programa Engativá Inspira. Todos los derechos reservados.
+                <br>
+                <br>
+                Desarrollado por Juan Camilo Andrade
+            </p>
+        </footer>
+    </main>
+
+    <div id="modal-producto" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <img id="modal-img" src="" alt="Producto">
+                </div>
+                <div class="modal-right">
+                    <h2 id="modal-title"></h2>
+                    <p class="modal-price" id="modal-price"></p>
+                    
+                    <div class="seller-card" onclick="irAlPerfil()">
+                        <img id="seller-img" src="" alt="Vendedor">
+                        <div class="seller-details">
+                            <strong id="seller-name"></strong>
+                            <span id="seller-dir"></span>
+                        </div>
+                    </div>
+
+                    <p class="product-desc">Excelente estado, precio negociable. Entrega inmediata en zona local.</p>
+                    
+                    <button class="btn-primary">Contactar</button>
+                    <button class="btn-secondary" onclick="irAlPerfil()">Detalles del vendedor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script>
+        function toggleSectorWeb(id) {
+            // Cierra otros sectores abiertos en la versión web
+            document.querySelectorAll('.desktop-only .sector-content').forEach(function(el) {
+                if (el.id !== id && el.style.display === 'block') {
+                    toggleSector(el.id); // Usa la función original para cerrar correctamente
+                }
+            });
+            // Alterna el sector actual
+            toggleSector(id);
+        }
+
+        function toggleSubmenuExclusive(id) {
+            var isWeb = id.indexOf('-web') !== -1;
+            var selector = isWeb ? '.desktop-only .submenu' : '.mobile-only .submenu';
+            document.querySelectorAll(selector).forEach(function(el) {
+                if (el.id !== id && el.style.display === 'block') {
+                    toggleSubmenu(el.id);
+                }
+            });
+            toggleSubmenu(id);
+        }
+
+        function openSectorWeb(id) {
+            // Cierra otros sectores abiertos en la versión web
+            document.querySelectorAll('.desktop-only .sector-content').forEach(function(el) {
+                if (el.id !== id && el.style.display === 'block') {
+                    el.style.display = 'none';
+                }
+            });
+            // Abre el sector actual si no está visible
+            var el = document.getElementById(id);
+            if (el.style.display !== 'block') el.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

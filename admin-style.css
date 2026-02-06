@@ -1,0 +1,97 @@
+/* admin-style.css */
+:root {
+    --sidebar-width: 260px;
+    --admin-azul: #2d88ff;
+}
+
+.admin-body {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-p);
+}
+
+/* Sidebar del Admin */
+.admin-sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--bg-s);
+    border-right: 1px solid var(--bg-h);
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+}
+
+.admin-sidebar h2 {
+    color: var(--azul);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.admin-nav-item {
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--txt-p);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-nav-item:hover, .admin-nav-item.active {
+    background-color: var(--bg-h);
+    color: var(--azul);
+}
+
+/* Contenido Principal */
+.admin-main {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    padding: 40px;
+}
+
+/* Tablas y Formularios */
+.admin-card {
+    background: var(--bg-s);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label { margin-bottom: 5px; font-weight: 600; }
+
+.form-group input, .form-group select, .form-group textarea {
+    padding: 10px;
+    border: 1px solid var(--bg-h);
+    border-radius: 6px;
+    background: var(--bg-p);
+    color: var(--txt-p);
+}
+
+.btn-save {
+    background: var(--azul);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Tabla de productos */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--bg-h); }
+
+/* Scroll personalizado para modales */
+.custom-scroll::-webkit-scrollbar { width: 8px; }
+.custom-scroll::-webkit-scrollbar-track { background: var(--bg-p); }
+.custom-scroll::-webkit-scrollbar-thumb { background: var(--bg-h); border-radius: 4px; }
+.custom-scroll::-webkit-scrollbar-thumb:hover { background: var(--txt-s); }
